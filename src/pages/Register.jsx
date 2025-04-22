@@ -33,7 +33,7 @@ const Register = ({ onRegisterSuccess }) => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div className="container d-flex justify-content-center align-items-center vh-100">
       <div className="card p-4 shadow" style={{ width: '100%', maxWidth: '400px' }}>
         <h3 className="text-center mb-4">Register</h3>
         <form onSubmit={handleRegister}>
