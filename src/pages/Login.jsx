@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import LoginComponent from '../components/LoginComponent';
+import Profile from '../components/Profile';
 
-export default function Login() {
+const Login = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const handleLoginSuccess = () => {
+    setLoggedIn(true);
+  };
+
   return (
-    <div className="p-4 max-w-sm mx-auto">
-      <h1 className="text-xl font-semibold mb-4">Login</h1>
-      <input className="block w-full border rounded mb-2 p-2" placeholder="Email" />
-      <input className="block w-full border rounded mb-2 p-2" placeholder="Senha" type="password" />
-      <button className="bg-blue-600 text-white p-2 rounded w-full">Entrar</button>
+    <div>
+      {!loggedIn ? (
+        <LoginComponent onLoginSuccess={handleLoginSuccess} />
+      ) : (
+        <Profile />
+      )}
     </div>
   );
-}
+};
+
+export default Login;
